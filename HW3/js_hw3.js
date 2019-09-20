@@ -180,10 +180,26 @@ function initiateRaid() {
 	};
 	raid[8] = {
 		name: "Serenity",
-		level: "70",
+		level: "60",
 		roles: [
 			"healer",
 			"damage dealer"
+		]
+	};
+	raid[9] = {
+    		name: "Princess",
+    		level: "20",
+    		roles: [
+    			"healer",
+    			"damage dealer"
+    		]
+    	};
+	raid[10] = {
+		name: "Almaz",
+		level: "85",
+		roles: [
+			"damage dealer",
+			"off tank"
 		]
 	};
 	return raid;
