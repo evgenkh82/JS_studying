@@ -1,16 +1,12 @@
-/**
-* Основная функция, которая вызывается из html по нажатию кнопки (событие onclick)
-* 
-* Вначале вызывается функция initiateRaid(), которая возвращает наполненный персонажами рейд (смотри ее описание).
-* Потом последовательно вызываются функции, которые находят персонажей с нужной ролью и выводят информацию об их действии в бою (смотри их описание).
-*/
+
 function startBattle() {
 	let raid = initiateRaid();
 	stage(raid,"tank","started tanking main Boss and adds");
-	interceptAdditionalBosses(raid);
-	startControllingAdds(raid);
-	startHealing(raid);
-	startDamageDealing(raid);
+	stage(raid,"off tank","intercepted additional bosses");
+	stage(raid,"controll","controlled a few adds");
+	stage(raid,"healer","started healling the tanks and the raid");
+	stage(raid,"damage dealer","started damaging to the assist target");
+
 }
 
 function stage(raid,role,messageEnding) {
@@ -20,96 +16,15 @@ function stage(raid,role,messageEnding) {
 			log(currentCharacter.name + messageEnding);
 		}
 	}
-    log("")
-}
-
-/**
-* Находим танка в рейде и отправляем его сагривать босса и адов.
-*/
-function makeMainAggro(raid) {
-	for (let i = 0; i < raid.length; i++) {
-		let currentCharacter = raid[i];
-		if (currentCharacter.roles.includes("tank")) {
-			log(currentCharacter.name + " started tanking main Boss and adds");
-		}
-	}
-    log("")
-}
-
-/**
-* Находим офф танков в рейде и отправляем их перехватывать второстепенных мини боссов.
-*/
-function interceptAdditionalBosses(raid) {
-	for (let i = 0; i < raid.length; i++) {
-		let currentCharacter = raid[i];
-		if (currentCharacter.roles.includes("off tank")) {
-			log(currentCharacter.name + " intercepted additional bosses");
-		}
-	}
-    log("")
-}
-
-/**
-* Находим контроллеров отправляем их контролить (корневать, ослеплять, оглушать...) столько аддов, сколько возможно.
-*/
-function startControllingAdds(raid) {
-	for (let i = 0; i < raid.length; i++) {
-		let currentCharacter = raid[i];
-		if (currentCharacter.roles.includes("controll")) {
-			log(currentCharacter.name + " controlled a few adds");
-		}
-	}
-    log("")
 }
 
 
-// Это сообщение замени на for и прочую логику по аналогии с makeMainAggro(raid) и interceptAdditionalBosses(raid)
-	// Для всех контроллеров должно выводиться сообщение: имя controlled a few adds.
-
-
-/**
-* Находим хилеров отправляем их лечить рейд.
-*/
-function startHealing(raid) {
-	for (let i = 0; i < raid.length; i++) {
-		let currentCharacter = raid[i];
-		if (currentCharacter.roles.includes("healer")) {
-			log(currentCharacter.name + " started healling the tanks and the raid");
-		}
-	}
-} // Это сообщение замени на for и прочую логику по аналогии с makeMainAggro(raid) и interceptAdditionalBosses(raid)
-	// Для всех контроллеров должно выводиться сообщение: имя started healling the tanks and the raid.
-
-
-/**
-* Находим дамагеров отправляем бить по своим ассистам.
-*/
-function startDamageDealing(raid) {
-	for (let i = 0; i < raid.length; i++) {
-		let currentCharacter = raid[i];
-		if (currentCharacter.roles.includes("damage dealer")) {
-			log(currentCharacter.name + " started damaging to the assist target");
-		}
-	}
-} // Это сообщение замени на for и прочую логику по аналогии с makeMainAggro(raid) и interceptAdditionalBosses(raid)
-	// Для всех контроллеров должно выводиться сообщение: имя started damaging to the assist target.
-
-
-/**
-* Эта функция находит на html-странице textarea по id ("output") и добавляет туда сообщение, которое ей переданно в аргументах.
-*
-* "\n" - означает начало новой строки
-*/
 function log(message) {
 	let textArea = document.getElementById("output");
 	textArea.append(message + "\n");
 }
 
-/**
-* Создается массив и в него добавляются объекты (персонажи).
-*
-* У каждого персонажа есть имя, уровень и массив ролей, которые персонаж может выполнять.
-*/
+
 function initiateRaid() {
 	let raid = new Array();
 	raid[0] = {
