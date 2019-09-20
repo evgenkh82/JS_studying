@@ -13,7 +13,7 @@ function stage(raid,role,messageEnding) {
 	for (let i = 0; i < raid.length; i++) {
 		let currentCharacter = raid[i];
 		if (currentCharacter.roles.includes(role)) {
-			log(currentCharacter.name + messageEnding);
+			log(currentCharacter.name + "" + messageEnding);
 		}
 	}
 }
