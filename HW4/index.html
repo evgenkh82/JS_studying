@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Commander Controll Panel</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Commander Controll Panel</h1>
+    <section>
+        <input type="button" value="Состав соединения" onclick="printFleetUnitShipList();" />
+        <input type="button" value="Минимальная общая скорость" onclick="printFleetUnitMinSpeed();" />
+        <input type="button" value="Суммарная мощность" disabled="disabled" />
+        <input type="button" value="Суммарная защита" disabled="disabled" />
+    </section>
+    <section>
+        <textarea id="output" rows="30" cols="150"></textarea>
+    </section>
+</body>
+</html>
