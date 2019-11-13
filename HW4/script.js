@@ -1,3 +1,15 @@
+/** Описание классов кораблей */
+const vsd = {
+    name: "Victory Star Destroyer",
+    speed: 60,
+    crew: 6107
+}
+const acclamator2 = {
+    name: "Acclamator II Cruiser",
+    speed: 40,
+    crew: 2014
+}
+
 /**
 * Печатает название соединение и
 * список классов кораблей и их количества в соединении
@@ -13,8 +25,21 @@ function printFleetUnitShipList() {
     }
 }
 
+/**
+* При нажатии вывести минимальную скорость во флоте
+* Перебор флота можно сделать по аналогии с printFleetUnitShipList()
+*/
 function printFleetUnitMinSpeed() {
+    print("under construction");
+}
 
+/**
+* Запросить у пользователя название типа (Victory Star Destroyer, к примеру)
+* По введенному классу, вывести информацию (название, экипаж, скорость)
+* Если такого класса нет, вывести соответствующее сообщение
+*/
+function printShipClassInfo() {
+    print("under construction");
 }
 
 /**
@@ -33,18 +58,6 @@ function print(line) {
 * У класса корабля есть название, скорость и экипаж.
 */
 function getFleetUnit() {
-    // Описание классов кораблей
-    let vsd = {
-        name: "Victory Star Destroyer",
-        speed: 60,
-        crew: 6107
-    }
-    let acclamator2 = {
-        name: "Acclamator II Cruiser",
-        speed: 40,
-        crew: 2014
-    }
-
     // Массив для хранения классов кораблей и их количества
     let ships = new Array();
     ships[0] = {

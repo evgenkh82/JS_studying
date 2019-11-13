@@ -7,11 +7,16 @@
 </head>
 <body>
     <h1>Commander Controll Panel</h1>
-    <section>
+    <section id="fleet_request_buttons">
+        <b>Запросы по флоту: </b>
         <input type="button" value="Состав соединения" onclick="printFleetUnitShipList();" />
         <input type="button" value="Минимальная общая скорость" onclick="printFleetUnitMinSpeed();" />
         <input type="button" value="Суммарная мощность" disabled="disabled" />
         <input type="button" value="Суммарная защита" disabled="disabled" />
+    </section>
+    <section id="class_request_buttons">
+        <b>Запросы по классам кораблей: </b>
+        <input type="button" value="Информация по классу корабля" onclick="printShipClassInfo();" />
     </section>
     <section>
         <textarea id="output" rows="30" cols="150"></textarea>
