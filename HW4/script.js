@@ -39,7 +39,8 @@ function printFleetUnitMinSpeed() {
 * Если такого класса нет, вывести соответствующее сообщение
 */
 function printShipClassInfo() {
-    print("under construction");
+    let shipUnitChoose = prompt('выбери корабль', 'vsd/acclamator2');
+        if 
 }
 
 /**
