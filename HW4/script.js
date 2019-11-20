@@ -39,8 +39,19 @@ function printFleetUnitMinSpeed() {
 * Если такого класса нет, вывести соответствующее сообщение
 */
 function printShipClassInfo() {
-    print("under construction");
-}
+    let shipUnitChoose = prompt('выбери корабль', 'Victory Star Destroyer/Acclamator II Cruiser');
+    switch(shipUnitChoose) {
+            case 'Victory Star Destroyer':
+                answer = [vsd];
+                print(answer);
+                break;
+
+            case 'Acclamator II Cruiser':
+                    answer = acclamator2;
+                    print(answer);
+                    break;
+        }
+    }
 
 /**
 * Этот метод просто печатает на страницу html,
