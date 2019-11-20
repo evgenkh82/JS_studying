@@ -42,12 +42,12 @@ function printShipClassInfo() {
     let shipUnitChoose = prompt('выбери корабль', 'Victory Star Destroyer/Acclamator II Cruiser');
     switch(shipUnitChoose) {
             case 'Victory Star Destroyer':
-                answer = [vsd];
+                answer = 'name: "Victory Star Destroyer", speed: 60, crew: 6107';
                 print(answer);
                 break;
 
             case 'Acclamator II Cruiser':
-                    answer = acclamator2;
+                    answer = 'name: "Acclamator II Cruiser", speed: 40, crew: 2014;'
                     print(answer);
                     break;
         }
