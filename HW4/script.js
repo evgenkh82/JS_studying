@@ -30,7 +30,16 @@ function printFleetUnitShipList() {
 * Перебор флота можно сделать по аналогии с printFleetUnitShipList()
 */
 function printFleetUnitMinSpeed() {
-    print("under construction");
+    let fleetUnit = getFleetUnit();
+    let MinShipSpeed = fleetUnit.ships[0].class.speed;
+    for (let i=0; i < fleetUnit.ships.length; i++) {
+        let currentShip = fleetUnit.ships[i];
+        if (MinShipSpeed > currentShip.class.speed) {
+            MinShipSpeed = currentShip.class.speed
+            }
+    }
+    answer = `Минимальная скорость флота равняется ${MinShipSpeed} НГСС`;
+    print(answer);
 }
 
 /**
@@ -40,17 +49,17 @@ function printFleetUnitMinSpeed() {
 */
 function printShipClassInfo() {
     let shipUnitChoose = prompt('выбери корабль', 'Victory Star Destroyer/Acclamator II Cruiser');
+    let answer;
     switch(shipUnitChoose) {
             case 'Victory Star Destroyer':
-                answer = 'name: "Victory Star Destroyer", speed: 60, crew: 6107';
-                print(answer);
+                answer = `name: ${vsd.name}\nspeed: ${vsd.speed}\ncrew: ${vsd.crew}`;
                 break;
 
             case 'Acclamator II Cruiser':
-                    answer = 'name: "Acclamator II Cruiser", speed: 40, crew: 2014;'
-                    print(answer);
-                    break;
+                answer = "name: " + acclamator2.name + "\nspeed: " + acclamator2.speed + "\ncrew: " + acclamator2.crew;
+                break;
         }
+        print(answer);
     }
 
 /**
