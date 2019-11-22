@@ -6,8 +6,8 @@ function Ship(name, className, speed, crew) {
     this.crew = crew;
 }
 Ship.prototype.toString = function toString() {
-        return `name: ${this.name}\nclass: ${this.className}\nspeed: ${this.speed}\ncrew: ${this.crew}`;
-    };
+    return `name: ${this.name}\nclass: ${this.className}\nspeed: ${this.speed}\ncrew: ${this.crew}`;
+};
 const vsd = new Ship ("Victory Star Destroyer", "Battle Cruiser", 60, 6107);
 const acclamator2 = new Ship ("Acclamator II Cruiser", "Cruiser", 40, 2014);
 
