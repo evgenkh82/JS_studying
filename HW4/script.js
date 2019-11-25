@@ -49,7 +49,7 @@ function printFleetUnitMinSpeed() {
     answer = `Минимальная скорость флота равняется ${MinShipSpeed} НГСС`;
     print(answer);
 }
-
+function printFleetUnitMinSpeed(name, ) {
 /**
 * Запросить у пользователя название типа (Victory Star Destroyer, к примеру)
 * По введенному классу, вывести информацию (название, экипаж, скорость)
