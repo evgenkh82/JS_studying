@@ -53,3 +53,12 @@ let dC = 4;
 let v = 3.14 * Math.pow(dC, 2) * heightC;
 alert(v + " " + "м3");
 */
+
+/* 6)
+let n = 3;
+let m = 4;
+let k = Math.sqrt(Math.pow(n, 2) + Math.pow(m, 2));
+alert(k);
+*/
+
+let nFib = {form: 1 to};
