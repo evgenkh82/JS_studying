@@ -6,17 +6,11 @@
 */
 function pursuitLine() {
     // Массив для хранения классов кораблей и их количества
-    let ships = new Array();
-    ships[0] = {
-        class: vsd,
-        count: 2
-    }
-    ships[1] = {
-        class: acclamator2,
-        count: 6
-    }
+    let shipAndCountMap = new Map();
+    shipAndCountMap.set(vsd, 2);
+    shipAndCountMap.set(acclamator2, 6)
 
     // Соединение флота с именем и массивом кораблей.
-    let pursuitLine = new FleetUnit("Линия преследования", ships, new Array());
+    let pursuitLine = new FleetUnit("Линия преследования", shipAndCountMap, new Array());
     return pursuitLine;
 }

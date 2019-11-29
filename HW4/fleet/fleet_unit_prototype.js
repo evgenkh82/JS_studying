@@ -1,22 +1,22 @@
 // fleet unit prototype
-function FleetUnit(name, ships, fleetUnits) {
+function FleetUnit(name, shipAndCountMap, fleetUnits) {
     this.name = name;
-    this.ships = ships;
+    this.shipAndCountMap = shipAndCountMap;
     this.fleetUnit = fleetUnits;
 }
 FleetUnit.prototype.toString = function() {
     let outPutFleet = this.name + "\n" + "------------- \n";
-    for (let currentShip of this.ships) {
-        let lineToPrint = currentShip.class.name + " " + currentShip.count + "\n";
+    for (let [ship, size] of this.shipAndCountMap.entries()) {
+        let lineToPrint = ship.name + " " + size + "\n";
         outPutFleet = outPutFleet + lineToPrint;
    }
     return outPutFleet;
 }
 FleetUnit.prototype.getMinSpeed = function() {
-    let minShipSpeed = this.ships[0].class.speed;
-    for (let currentShip of this.ships) {
-       if (minShipSpeed > currentShip.class.speed) {
-            minShipSpeed = currentShip.class.speed
+    let minShipSpeed = this.shipAndCountMap.keys().next().value.speed;
+    for (let currentShip of this.shipAndCountMap.keys()) {
+       if (minShipSpeed > currentShip.speed) {
+            minShipSpeed = currentShip.speed
        }
     }
     return minShipSpeed;
