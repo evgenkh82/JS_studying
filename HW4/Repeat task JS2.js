@@ -85,3 +85,4 @@ let Кб = 1024;
 let sizebite = size * Кб;
 alert(sizebite);
 */
+
