@@ -77,3 +77,11 @@ switch (n) {
     default: console.log ("Нет таких значений");
 }
 */
+
+/*
+let size = 120;
+let unit = "Kb";
+let Кб = 1024;
+let sizebite = size * Кб;
+alert(sizebite);
+*/
